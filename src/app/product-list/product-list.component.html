@@ -1,0 +1,18 @@
+<div class="product-list">
+    <h1>Product List</h1>
+  
+    <div *ngFor="let product of products" class="product-card-container">
+      <!-- Pass product data to child component -->
+      <app-product-card [product]="product" (delete)="deleteProduct(product.id)"></app-product-card>
+    </div>
+  
+    <!-- Add new product form -->
+    <div class="add-product">
+      <h3>Add New Product</h3>
+      <input [(ngModel)]="newProduct.name" placeholder="Product Name" />
+      <input [(ngModel)]="newProduct.description" placeholder="Product Description" />
+      <input [(ngModel)]="newProduct.price" type="number" placeholder="Product Price" />
+      <button (click)="addProduct()">Add Product</button>
+    </div>
+  </div>
+  
