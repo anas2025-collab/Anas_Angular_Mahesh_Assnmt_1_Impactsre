@@ -1,1 +1,7 @@
-<app-product-list></app-product-list>
+<!-- app.component.html -->
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/cart">Cart ({{ productService.getCart().length }})</a>
+  </nav>
+  <router-outlet></router-outlet>
+  

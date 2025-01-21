@@ -1,0 +1,34 @@
+/* cart.component.css */
+.cart {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart h2 {
+    text-align: center;
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart button {
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff;
+  }
+  
+  .cart button:hover {
+    background-color: #0056b3;
+  }
+  

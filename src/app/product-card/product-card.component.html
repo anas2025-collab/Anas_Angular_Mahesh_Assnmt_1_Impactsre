@@ -1,7 +1,8 @@
+<!-- product-card.component.html -->
 <div class="product-card">
-    <h3>{{ product?.name }}</h3>
-    <p>{{ product?.description }}</p>
-    <p><strong>Price: rs {{ product?.price }}</strong></p>
-    <button (click)="onDelete()">Delete</button>
-  </div>
-  
+  <h3>{{ product?.name }}</h3>
+  <p>{{ product?.description }}</p>
+  <p><strong>Price: ${{ product?.price }}</strong></p>
+  <button (click)="onDelete()">Delete</button>
+  <button (click)="addToCart()">Add to Cart</button>
+</div>

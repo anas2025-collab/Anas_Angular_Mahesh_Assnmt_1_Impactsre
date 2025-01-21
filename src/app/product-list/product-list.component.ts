@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
-
+// product-list.component.ts
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products: Product[] = [
-    { id: 1, name: 'Laptop', description: 'A high-performance laptop', price: 1000 },
-    { id: 2, name: 'Smartphone', description: 'A latest model smartphone', price: 800 }
-  ];
-
-  // New product data to be added
+export class ProductListComponent implements OnInit {
+  products: Product[] = [];
   newProduct: Product = { id: 0, name: '', description: '', price: 0 };
 
+  constructor(private productService: ProductService) { }
+
+  ngOnInit(): void {
+    this.products = this.productService.getProducts();
+  }
+
   addProduct() {
-    const newId = this.products.length + 1;
-    this.products.push({ ...this.newProduct, id: newId });
+    this.productService.addProduct(this.newProduct);
     this.newProduct = { id: 0, name: '', description: '', price: 0 }; // Reset form
   }
 
   deleteProduct(id: number) {
-    this.products = this.products.filter(product => product.id !== id);
+    this.productService.deleteProduct(id);
+    this.products = this.productService.getProducts(); // Refresh the list
   }
 }

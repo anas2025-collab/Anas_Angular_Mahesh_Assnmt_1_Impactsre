@@ -1,4 +1,6 @@
+// app.component.ts
 import { Component } from '@angular/core';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'product-management';
+  constructor(public productService: ProductService) { }
 }
