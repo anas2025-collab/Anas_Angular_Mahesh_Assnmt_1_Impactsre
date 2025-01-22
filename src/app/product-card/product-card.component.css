@@ -27,3 +27,13 @@
 .product-card button:hover {
   background-color: darkred;
 }
+
+
+.product-card button {
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: darkred;
+  color: white;
+}
